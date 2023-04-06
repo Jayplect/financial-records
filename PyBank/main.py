@@ -75,7 +75,8 @@ print(f'Greatest increase in Profits: {date_max} (${max})')
 # # # The greatest decrease in profits (date and amount) over the entire period
 print(f'Greatest Decrease in Profits: {date_min} (${min})')
 
-with open("textfile.txt", "w") as txtfile:
+#text file with results from analysis
+with open(os.path.join("analysis","textfile.txt"), "w") as txtfile:
     txtfile.write("Financial Analysis" + "\n")
     txtfile.write("-------------------------------------" + "\n")
     txtfile.write("Total Months:" + " " + str(total_months) + "\n")

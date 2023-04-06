@@ -58,7 +58,7 @@ with open(csvpath) as csvfile:
             decider_value = votecount
             winner_vote = decider_value
             winner_name = i
-    #
+    #print winner's name
     print(f'{winner_name} is the winner with {winner_vote} votes')
 
 print("Election Results")
@@ -68,11 +68,11 @@ print(f'Total Votes: {total_votes}')
 
 print("---------------------------------------------------")
 
-# 
-for (d,f) in zip(candidate_votes,votepercent_list):
+#simultaneously iterate each through candidate votes and percentage 
+for (candidate,votepercent) in zip(candidate_votes,votepercent_list):
     
-    # 
-    print(f'{d}: {f}% ({candidate_votes[d]})')
+    #print each unique candidate, their votes and vote percent
+    print(f'{candidate}: {votepercent}% ({candidate_votes[candidate]})')
 
 print("---------------------------------------------------")
 # The winner of the election based on popular vote
@@ -80,19 +80,20 @@ print(f'Winner: {winner_name}')
 
 print("---------------------------------------------------")
 
-#
-with open("Summary.txt", "w") as txtfile:
+#text file with results from analysis
+with open(os.path.join("analysis", "Summary.txt"), "w") as txtfile:
     txtfile.write("Election Results" + "\n")
     txtfile.write("-------------------------------------" + "\n")
     txtfile.write("Total Votes:" + " " + str(total_votes) + "\n")
     txtfile.write("-------------------------------------" + "\n")
     
-    #
-    for (d,f) in zip(candidate_votes,votepercent_list):
+    #simultaneously iterate each through candidate votes and percentage
+    for (candidate,votepercent) in zip(candidate_votes,votepercent_list):
         
-        #
-        txtfile.write(str(d)+":" + " "+ str(f) + "%" + " "+ "("+ str(candidate_votes[d]) + ")" + "\n")
-    #
+        #print each unique candidate, their votes and vote percent
+        txtfile.write(str(candidate)+":" + " "+ str(votepercent) + "%" + " "+ "("+ str(candidate_votes[candidate]) + ")" + "\n")
+    
+    #write to text file the winner
     txtfile.write("-------------------------------------" + "\n")
     txtfile.write("Winner:" + " " + str(winner_name) + "\n")
     txtfile.write("-------------------------------------" + "\n")
