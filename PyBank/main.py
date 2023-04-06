@@ -84,4 +84,4 @@ with open(os.path.join("analysis","textfile.txt"), "w") as txtfile:
     txtfile.write("Average Change:" + " " +  "$" + str(average_change) + "\n")
     txtfile.write("Greatest increase in Profits:" + " " + str(date_max)+ " " + "("+ "$" +  str(max) + ")" + "\n")
     txtfile.write("Greatest decrease in Profits:" + " " + str(date_min)+ " " + "("+ "$" +  str(min) + ")" + "\n")
-    
+    txtfile.close()

@@ -97,3 +97,4 @@ with open(os.path.join("analysis", "Summary.txt"), "w") as txtfile:
     txtfile.write("-------------------------------------" + "\n")
     txtfile.write("Winner:" + " " + str(winner_name) + "\n")
     txtfile.write("-------------------------------------" + "\n")
+    txtfile.close()
