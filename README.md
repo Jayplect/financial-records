@@ -1,4 +1,4 @@
-## Desciption
+## Description
 Built a script to analyze financial records from a bank and to help modernize a rural town vote-counting process.
 
 ## Libraries used
